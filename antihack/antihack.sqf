@@ -595,7 +595,8 @@ _AH_Global = _AH_Global + ("
 			{
 				private ['_dam', '_sel', '_var'];
 
-				_dam = [_veh, _x] call object_getHit;
+				//_dam = [_veh, _x] call object_getHit;
+				_dam = ([_veh, _x] call object_getHit) select 0; //changed for epoch 107 and numerous scripts that call for _dam needs that update as follows
 
 				if (_dam > 0) then {
 					_sel = getText(configFile >> 'CfgVehicles' >> typeOf _veh >> 'HitPoints' >> _x >> 'name');
